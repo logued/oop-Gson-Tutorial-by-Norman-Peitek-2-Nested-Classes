@@ -60,3 +60,23 @@ public class App {
         System.out.println(restaurantObject.toString());
     }
 }
+
+
+//TODO  - Consider the extract below from the ISS API
+// https://api.open-notify.org/iss-pass.json?lat=23&lon=50
+// Create a Class IssLocationNested to store this data.
+// You will need a "Request" class, and a "request" field in
+// the IssLocationNested class.
+// Instantiate an IssLocationNested object with the data below.
+// Write code to Serialize and Deserialize the data
+// and output the results.
+//{
+//        "message":"success",
+//        "request":{
+//        "altitude":100,
+//        "datetime":1646739743,
+//        "latitude":23.0,
+//        "longitude":50.0,
+//        "passes":5
+//        }
+//}
