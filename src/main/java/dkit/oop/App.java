@@ -70,13 +70,13 @@ public class App {
 // Instantiate an IssLocationNested object with the data below.
 // Write code to Serialize and Deserialize the data
 // and output the results.
-//{
+//   {
 //        "message":"success",
 //        "request":{
-//        "altitude":100,
-//        "datetime":1646739743,
-//        "latitude":23.0,
-//        "longitude":50.0,
-//        "passes":5
-//        }
-//}
+//                  "altitude":100,
+//                  "datetime":1646739743,
+//                  "latitude":23.0,
+//                  "longitude":50.0,
+//                  "passes":5
+//         }
+//  }
