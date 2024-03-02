@@ -1,12 +1,12 @@
 package dkit.oop;
 
-public class UserAddress {
+public class Address {
     String street;
     String houseNumber;
     String city;
     String country;
 
-    public UserAddress(String street, String houseNumber, String city, String country) {
+    public Address(String street, String houseNumber, String city, String country) {
         this.street = street;
         this.houseNumber = houseNumber;
         this.city = city;
@@ -15,7 +15,7 @@ public class UserAddress {
 
     @Override
     public String toString() {
-        return "\nUserAddress{" +
+        return "\nAddress{" +
                 "street='" + street + '\'' +
                 ", houseNumber='" + houseNumber + '\'' +
                 ", city='" + city + '\'' +

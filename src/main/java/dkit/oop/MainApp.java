@@ -4,38 +4,28 @@ import com.google.gson.Gson;
 
 /**
  * Gson Tutorial 2 - Mapping of Nested Objects
+ * A User class has an Address field.
+ * (So, the Address is nested inside the User class)
+ * This is known as composition - user is composed of an address field and other fields.
  */
-public class App {
+public class MainApp {
     public static void main(String[] args) {
-        System.out.println("GSON Tutorial 2");
-        App app = new App();
-        app.start();
+        System.out.println("Gson Tutorial 2");
+        MainApp mainApp = new MainApp();
+        mainApp.start();
     }
 
     public void start() {
 
-        UserAddress userAddress = new UserAddress(
-                "Main Street",
-                "42A",
-                "Magdeburg",
-                "Germany"
-        );
+        Address address = new Address("Main Street","42A","Magdeburg","Germany" );
+        User user = new User("Norman","norman@futurestud.io",26,true, address  );   // reference to nested address object
 
-        UserNested userObject = new UserNested(
-                "Norman",
-                "norman@futurestud.io",
-                26,
-                true,
-                userAddress     // reference to nested address object
-        );
-
-        // Serialize a Java Object containing a nested object
-        // using the Gson parser.
+        // Serialize a Java Object containing a nested object using the Gson parser.
         Gson gsonParser = new Gson();
-        String userWithAddressJson = gsonParser.toJson(userObject);
+        String userWithAddressJson = gsonParser.toJson(user);
 
         System.out.println("Nested User Object JSON String :");
-        System.out.println( userObject.toString() );
+        System.out.println( user.toString() );
 
         // De-serialize a JSON String into a Java Object
 
@@ -54,7 +44,7 @@ public class App {
                     "'waiter':{ 'age':18, 'name': 'Norman', 'salary': 1000}}";
 
         // Note that the names of the Key values match the names of the fields defined in the classes
-        // This is required (as otherwise GSon could not match them)
+        // This is required (as otherwise Gson could not match them)
 
         Restaurant restaurantObject = gsonParser.fromJson(restaurantJsonString, Restaurant.class);
 
@@ -62,16 +52,3 @@ public class App {
         System.out.println(restaurantObject.toString());
     }
 }
-
-//TODO  - Consider the data below from the ISS API
-// http://api.open-notify.org/iss-now.json
-// Create a class IssNow to store the data returned from the API call.(shown below)
-// You will need a Location class, to store the nested location data.
-// Instantiate a new IssNow object using the GSon parser and string data below. (Deserialize)
-// Write code to Serialize the ISSNow object into a new string and output the results.
-// {
-//   "timestamp": 1678125400,
-//   "message": "success",
-//   "iss_position": {"latitude": "48.9785",
-//                    "longitude": "157.0276"}
-// }

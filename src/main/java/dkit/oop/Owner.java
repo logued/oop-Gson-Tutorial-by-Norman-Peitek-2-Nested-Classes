@@ -3,9 +3,9 @@ package dkit.oop;
 public class Owner {
 
     String name;        // default access modifier - package-private
-    UserAddress address;
+    Address address;
 
-    public Owner(String name, UserAddress address) {
+    public Owner(String name, Address address) {
         this.name = name;
         this.address = address;
     }
